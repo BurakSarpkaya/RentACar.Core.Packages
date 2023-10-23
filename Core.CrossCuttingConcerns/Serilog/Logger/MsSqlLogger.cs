@@ -11,7 +11,7 @@ namespace Core.CrossCuttingConcerns.Serilog.Logger
         public MsSqlLogger(IConfiguration configuration)
         {
             MsSqlConfiguration logConfiguration =
-                configuration.GetSection("SeriLogConfigurations:MsSqlConfiguration").Get<MsSqlConfiguration>()
+                configuration.GetSection("Serilog:MsSqlConfiguration").Get<MsSqlConfiguration>()
                 ?? throw new Exception(SerilogMessages.NullOptionsMessage);
 
             MSSqlServerSinkOptions sinkOptions = new()
